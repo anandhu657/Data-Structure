@@ -46,6 +46,30 @@ public class SLinkedlist {
         temp.next = newNode;
     }
 
+    // insert at the before
+    public void insertBefore(int match, int data) {
+        Node newNode = new Node(data);
+
+        Node temp = head, prev = null;
+
+        if (temp != null && temp.data == match) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        while (temp != null && temp.data != match) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            return;
+        }
+        prev.next = newNode;
+        newNode.next = temp;
+    }
+
     // Insert from the begging
     public void insertBegin(int data) {
         Node newNode = new Node(data);
@@ -142,6 +166,7 @@ public class SLinkedlist {
         // Insert at the intermediate and beginning
         list.insertAfter(30, 50);
         list.insertBegin(70);
+        list.insertBefore(90, 200);
 
         // Delete data at any location
         list.delete(30);
