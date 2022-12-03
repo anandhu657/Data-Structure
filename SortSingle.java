@@ -37,17 +37,19 @@ public class SortSingle {
     }
 
     public void deleteDuplicate() {
-        Node temp = head.next;
-        Node prev = head;
+        Node current = head;
 
-        while (temp != null) {
-            if (prev.data == temp.data) {
-                prev.next = temp.next;
-                temp = prev.next;
-                continue;
+        while (current != null) {
+            Node nextEle = current.next;
+            while (nextEle != null && nextEle.data == current.data) {
+                nextEle = nextEle.next;
             }
-            temp = prev.next;
-            prev=prev.next;
+
+            current.next = nextEle;
+            if (nextEle == tail) {
+                tail = current;
+            }
+            current = nextEle;
         }
     }
 
