@@ -46,9 +46,12 @@ public class SortSingle {
             }
 
             current.next = nextEle;
-            if (nextEle == tail) {
+
+            if (nextEle == tail && current.data == nextEle.data) {
                 tail = current;
+                tail.next = null;
             }
+            
             current = nextEle;
         }
     }
