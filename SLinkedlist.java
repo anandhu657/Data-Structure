@@ -169,7 +169,7 @@ public class SLinkedlist {
         list.insertBefore(90, 200);
 
         // Delete data at any location
-        list.delete(30);
+        list.delete(30);    
 
         list.setValue(40, 90);
 
