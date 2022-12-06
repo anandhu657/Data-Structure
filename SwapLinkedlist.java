@@ -40,9 +40,11 @@ public class SwapLinkedlist {
             temp = temp.next;
         }
 
+        Node tempNext = swapTemp2.next;
         swapPrev1.next = swapTemp2;
+        swapPrev2.next = swapTemp1;
         swapTemp2.next = swapTemp1.next;
-        // swapTemp1
+        swapTemp1.next = tempNext;       
     }
 
     public void display() {
@@ -50,10 +52,26 @@ public class SwapLinkedlist {
 
         if (temp == null) {
             System.out.println("Empty linked list");
+            return;
         }
 
         while (temp != null) {
             System.out.println(temp.data);
+            temp = temp.next;
         }
+    }
+
+    public static void main(String[] args) {
+        SwapLinkedlist list = new SwapLinkedlist();
+
+        list.addNode(10);
+        list.addNode(20);
+        list.addNode(30);
+        list.addNode(40);
+        list.addNode(50);
+
+        list.swapList(20, 30);
+
+        list.display();
     }
 }
