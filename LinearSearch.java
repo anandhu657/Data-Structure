@@ -13,15 +13,16 @@ public class LinearSearch {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        LinearSearch lSearch = new LinearSearch();
-        System.out.println("Enter your search element: ");
-        int key = sc.nextInt();
-        int position = lSearch.search(key);
-        if (position == -1) {
-            System.out.println("Element is not present in array");
-        } else {
-            System.out.println("Element is present in the location " + position);
+        try (Scanner sc = new Scanner(System.in)) {
+            LinearSearch lSearch = new LinearSearch();
+            System.out.println("Enter your search element: ");
+            int key = sc.nextInt();
+            int position = lSearch.search(key);
+            if (position == -1) {
+                System.out.println("Element is not present in array");
+            } else {
+                System.out.println("Element is present in the location " + position);
+            }
         }
     }
 }
