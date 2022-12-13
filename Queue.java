@@ -58,8 +58,8 @@ public class Queue {
 
         list.dequeue();
         list.dequeue();
-        list.dequeue();
-        list.dequeue();
+        // list.dequeue();
+        // list.dequeue();
         // list.dequeue();
 
         list.enqueue(30);
