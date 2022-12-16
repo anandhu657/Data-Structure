@@ -11,7 +11,7 @@ class StackArray {
 
     public void push(Scanner sc) {
         if (top == maxsize - 1) {
-            System.out.println("Overflow");
+            System.out.println("Stack Overflow");
             return;
         } else {
             System.out.println("Enter value");
